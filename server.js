@@ -3,7 +3,7 @@ import productRoutes from "./routes/product.js";
 import cors from 'cors';
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
-
+import db from "./DAO/MongoDBDOA.js";
 
 //creation of the express app object
 const app = express();
@@ -26,5 +26,13 @@ app.use("/products",productRoutes);
 
 
 app.listen(process.env,()=>{
-    console.log(`Web Server is up and running`)
+    
+    console.log(`Web Server is up and running`);
+
+    db.connect()
+    .then(()=>{
+        console.log(`Connected to DB`)
+    })
+    .catch(err=>console.log(`Cannot connect to db because ${err}`));
+    
 })
