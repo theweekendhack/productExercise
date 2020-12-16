@@ -1,7 +1,6 @@
 import express from "express";
 import productRoutes from "./routes/product.js";
 import cors from 'cors';
-import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import db from "./DAO/MongoDBDOA.js";
 

@@ -1,4 +1,4 @@
-import mongoose, { Mongoose } from 'mongoose';
+import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const productSchema = new Schema({
@@ -30,7 +30,9 @@ const productSchema = new Schema({
   quantity :{
     type:Number
   },
-
+  category:{
+    type:String
+  },
   features : {
       type :[{featureName :String, featureValue: String}]
   },

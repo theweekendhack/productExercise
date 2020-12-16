@@ -8,7 +8,7 @@ class MongodbDAO
 
         return new Promise((resolve,reject)=>{
 
-            mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {useNewUrlParser: true, useUnifiedTopology: true})
+            mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false })
             .then(()=>{
                 resolve();
             })
