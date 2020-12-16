@@ -1,5 +1,5 @@
 
-exports.getAProduct=(req,res)=>{
+export const getAProduct=(req,res)=>{
 
     const productID = req.params.id;
 
@@ -8,7 +8,7 @@ exports.getAProduct=(req,res)=>{
 };
 
 
-exports.getAllProducts=(req,res)=>{
+export  const  getAllProducts=(req,res)=>{
 
     let pageNo = req.query.pageNo;
 
@@ -22,7 +22,7 @@ exports.getAllProducts=(req,res)=>{
 };
 
 
-exports.addProduct=(req,res)=>{
+export const addProduct=(req,res)=>{
 
     const product = {
     
@@ -40,13 +40,13 @@ exports.addProduct=(req,res)=>{
     console.log(product);
 };
 
-exports.updateProduct=(req,res)=>{
+export  const updateProduct=(req,res)=>{
 
     console.log(`Update Product`);
 };
 
 
-exports.deleteProduct=(req,res)=>{
+ export const deleteProduct=(req,res)=>{
 
     console.log(`Delete Product`);
 };

@@ -1,11 +1,15 @@
-const express = require("express");
-const productRoutes = require("./routes/product.js");
-const cors = require('cors');
-const bodyParser = require("body-parser");
-require("dotenv").config({path:"config/keys.env"});
+import express from "express";
+import productRoutes from "./routes/product.js";
+import cors from 'cors';
+import bodyParser from "body-parser";
+import dotenv from "dotenv";
 
 
+//creation of the express app object
 const app = express();
+
+
+dotenv.config({path:"config/keys.env"});
 
 //cors middleware
 app.use(cors());

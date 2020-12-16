@@ -1,13 +1,13 @@
-const express = require('express')
+import express from "express";
 const router = express.Router();
 
-const {
+import {
         getAProduct,
         getAllProducts,
         addProduct,
         deleteProduct,
         updateProduct
-    } = require("../controllers/product.js");
+    } from "../controllers/product.js";
 
 
 // define the home page route
@@ -26,4 +26,4 @@ router.put('/:id',updateProduct);
 router.delete('/:id',deleteProduct);
 
 
-module.exports = router;
+export default router;
