@@ -27,7 +27,6 @@ const options = {
   
   const swaggerSpecification = swagerJsDoc(options);
 
-  app.use("/api-docs", swaggerUi.serve,swaggerUi.setup(swaggerSpecification))
 
 //cors middleware
 app.use(cors());
@@ -38,10 +37,13 @@ app.use(express.urlencoded({extended:true}));
 // parse application/json
 app.use(express.json());
 
+
+app.use("/api-docs", swaggerUi.serve,swaggerUi.setup(swaggerSpecification))
+
 //map product router to app
 app.use("/products",productRoutes);
 
-app.listen(process.env,()=>{
+app.listen(process.env.PORT,()=>{
     
     console.log(`Web Server is up and running`);
 
