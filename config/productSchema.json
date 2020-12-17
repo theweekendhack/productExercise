@@ -1,0 +1,43 @@
+{
+    "components" : 
+    {
+        "schemas": {
+          "product": {
+            "properties": {
+              "title": {
+                "type":"string"
+            }, 
+            "description" :{
+              "type":"string"
+            },
+            "unitPrice" :{
+              "type":"number"
+            },
+            "costPrice" :{
+              "type":"number"
+            },
+            
+            "minLevel" :{
+              "type":"number"
+            },
+            
+            "maxLevel" :{
+              "type":"string"
+            },
+          
+            "quantity" :{
+              "type":"number"
+
+            },
+            "category":{
+              "type":"string"
+            },
+            "features" : {
+                "type" :[{"featureName" :"string", "featureValue": "string"}]
+            }
+          
+            }
+          }
+        }
+    }
+}

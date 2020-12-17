@@ -11,13 +11,13 @@ export const getAProduct=async(req,res)=>{
         if(product)
         {
             res.status(200).json({
-                message :`Product with ID : ${productID}`,
+                message :`Successful operation. Product with ID : ${productID} found`,
                 body : product
             });
         }
         else
         {
-            res.status(400).json({
+            res.status(404).json({
                 message :`No product found with the product id ${productID}`
             });
         }
@@ -27,8 +27,8 @@ export const getAProduct=async(req,res)=>{
        
         if(err.name.includes("CastError"))
         {
-            res.status(400).json({
-                message :`No product found with the product id ${productID}`
+            res.status(404).json({
+                message :`Invalid ID supplied`
             }); 
         }
         else
@@ -78,7 +78,7 @@ export  const  getAllProducts= async(req,res)=>{
                 else
                 {
                     res.status(200).json({
-                        message :`Product list at page ${pageNo}`,
+                        message :`Product list at page ${pageNo}. Total number of products found: ${products.length}`,
                         body  : products,
                         totalDocuments : count,
                         pageNo,
@@ -93,8 +93,8 @@ export  const  getAllProducts= async(req,res)=>{
         }
         else
         {
-            res.status(400).json({
-                message :`No products found at page ${pageNo}`
+            res.status(404).json({
+                message :`No products found on page ${pageNo}`
     
             });
         }
@@ -171,7 +171,7 @@ export  const updateProduct=async(req,res)=>{
         }
         else
         {
-            res.status(400).json({
+            res.status(404).json({
                 message :`No product found with the product id ${productID}`
             });
         }
@@ -182,7 +182,7 @@ export  const updateProduct=async(req,res)=>{
         if(err.name.includes("CastError"))
         {
             res.status(400).json({
-                message :`No product found with the product id ${productID}`
+                message :`Invalid Product`
             }); 
         }
         else
